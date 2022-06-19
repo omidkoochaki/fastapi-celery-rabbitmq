@@ -16,15 +16,17 @@ def create_app() -> FastAPI:
     return current_app
 
 
-# app = create_app()
-# celery = app.celery_app
+app = create_app()
+celery = app.celery_app
 
-app = FastAPI(title="Asynchronous tasks processing with Celery and RabbitMQ",
-              description="Sample FastAPI Application to demonstrate Event "
-                          "driven architecture with Celery and RabbitMQ",
-              version="1.0.0", )
-celery = create_celery()
-app.include_router(universities.router)
+# app = FastAPI(title="Asynchronous tasks processing with Celery and RabbitMQ",
+#               description="Sample FastAPI Application to demonstrate Event "
+#                           "driven architecture with Celery and RabbitMQ",
+#               version="1.0.0", )
+# celery = create_celery()
+# app.include_router(universities.router)
 
 if __name__ == "__main__":
     uvicorn.run("main:app", port=9000, reload=True)
+
+

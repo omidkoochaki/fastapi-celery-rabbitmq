@@ -10,3 +10,5 @@ To run rabbitMQ on docker with management dashboard use:
 ### Run Celery Workers (Use another terminal):
 ``celery -A main.celery worker --loglevel=info -Q universities,university``
 
+### Run Flowers
+``celery -A main.celery flower --port=5555``
